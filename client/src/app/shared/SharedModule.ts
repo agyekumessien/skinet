@@ -7,7 +7,7 @@ import { PagerComponent } from './components/pager/pager.component';
 @NgModule({
   declarations: [PagingHeaderComponent, PagerComponent],
 
-  imports: [CommonModule, PaginationModule],
+  imports: [CommonModule, PaginationModule.forRoot()],
 
   exports: [PagingHeaderComponent, PagerComponent],
 })

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data
 {
-   public class ProductRepository : IProductRepository
+    public class ProductRepository : IProductRepository
     {
         private readonly StoreContext _context;
         public ProductRepository(StoreContext context)
@@ -24,7 +24,7 @@ namespace Infrastructure.Data
             return await _context.Products
                 .Include(p => p.ProductType)
                 .Include(p => p.ProductBrand)
-                .FirstOrDefaultAsync(p => p.Id == id);
+                .FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<IReadOnlyList<Product>> GetProductsAsync()

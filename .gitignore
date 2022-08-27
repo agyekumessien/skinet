@@ -2,3 +2,6 @@ obj
 bin
 *.db
 appsettings.json
+*.rdb
+NoteList.txt
+

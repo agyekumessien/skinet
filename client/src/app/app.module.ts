@@ -10,8 +10,9 @@ import { ShopModule } from './shop/shop.module';
 import { HomeModule } from './_Views/home/home.module';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { LoadingInterceptor } from './core/interceptors/loading.interceptos';
 
+import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { LoadingInterceptor } from './core/interceptors/loading.interceptos';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptos';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
